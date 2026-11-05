@@ -96,7 +96,7 @@ $env:LIBRARY_DB_PASSWORD = $null
 
 ## Git 提交
 
-功能按阶段保留 Git 提交，已推送至用户提供的 [GitHub 仓库](https://github.com/ch379/Java_homework2)。前期开发时尚未提供远程仓库，因此这些阶段的提交是在仓库提供后集中推送。题目要求 Gitee，提交作业前仍需确认老师是否接受 GitHub，或另行同步到 Gitee。
+功能按阶段保留 Git 提交，已推送至题目要求的 [Gitee 仓库](https://gitee.com/ch379/java_homework2)，并保留 [GitHub 仓库](https://github.com/ch379/Java_homework2)。前期开发时尚未提供远程仓库，因此这些阶段的提交是在仓库提供后集中推送。
 
 ## 参考
 
