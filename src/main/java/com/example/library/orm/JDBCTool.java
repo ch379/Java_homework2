@@ -27,7 +27,7 @@ public final class JDBCTool {
             T object = newInstance(clazz);
             for (Field field : fields) {
                 String columnName = columnName(field);
-                Object value = rs.getObject(columnName);
+                Object value = rs.getObject(columnName.replace("`", ""));
                 try {
                     field.setAccessible(true);
                     field.set(object, convertValue(value, field.getType()));

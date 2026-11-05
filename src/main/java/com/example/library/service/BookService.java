@@ -32,7 +32,7 @@ public final class BookService {
         b.setDays(integer(j,"days",1,365));b.setPrice(price(j));return b;
     }
     public Book create(Connection c, JsonObject j) throws Exception {
-        Book b=initialize(fields(j));b.setStock(integer(j,"stock",1,1000));b.setStatus("正常");
+        Book b=initialize(fields(j));b.setStock(integer(j,"stock",0,1000));b.setStatus("正常");
         b.setIntroduction(text(j,"introduction"));require(b.getIntroduction().length()<=512,"简介最多512字");
         JDBCTool.save(b,c);
         for (int i=0;i<b.getStock();i++) {
