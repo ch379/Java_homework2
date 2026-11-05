@@ -1,0 +1,8 @@
+target/
+.runtime/
+.local/
+config/db.local.properties
+*.log
+.idea/
+.vscode/
+__pycache__/
