@@ -209,11 +209,15 @@ public final class JDBCTool {
             return Timestamp.valueOf(value.toString());
         }
         if (Base.class.isAssignableFrom(targetType)) {
-            Base reference = (Base) newInstance(targetType == com.example.library.entity.User.class
-                    ? com.example.library.entity.Student.class : targetType);
+            Class<?> referenceType = targetType == com.example.library.entity.User.class ? UserReference.class : targetType;
+            Base reference = (Base) newInstance(referenceType);
             reference.setId(value.toString());
             return reference;
         }
         throw new IllegalArgumentException("Unsupported conversion: " + value.getClass() + " -> " + targetType);
+    }
+    /** An unresolved foreign-key reference, not a claim about the user's actual role. */
+    private static final class UserReference extends com.example.library.entity.User {
+        @Override public String[] hasPermission() { return new String[0]; }
     }
 }
